@@ -89,18 +89,14 @@ body {
   font-family: var(--ff-inter);
 }
 
-main {
-  margin: auto 10%;
-  border-radius: 0.5em;
-  overflow: hidden;
-}
-
 .card {
   background-color: var(--color-secondary-darkBlue);
   color: var(--color-neutral-white);
+  max-width: 1000px;
 }
 
 .card-img {
+  object-fit: cover;
   position: relative;
 }
 
@@ -120,6 +116,7 @@ main {
 
 .card-body {
   margin: 1.5em;
+  user-select: none;
 }
 
 .highlight {
@@ -148,17 +145,22 @@ main {
   letter-spacing: 0.125em;
 }
 
-@media (min-width: 601px) {
+@media (min-width: 600px) {
   .card {
-    flex-direction: row-reverse;
-    width: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    width: 90vw;
   }
   .card-body {
-    width: 25%;
+    grid-area: 1;
     text-align: left;
   }
   .card-img {
-    width: 50%;
+  
+    display: flex;
+    align-self: center;
+    object-fit: fill;
   }
 
   .list-group {
